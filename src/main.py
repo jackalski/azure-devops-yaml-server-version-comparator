@@ -55,6 +55,7 @@ def load_config(config_path: str = 'config.yaml'):
         logger.warning(f"Configuration file not found at {config_path}")
         create_default_config(config_path)
         logger.info("Please update the configuration file with your values and run again")
+        os.startfile(config_path)
         sys.exit(1)
         
     try:
