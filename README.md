@@ -8,6 +8,9 @@ A Python tool that compares YAML files between Azure DevOps repositories and pub
 - Compares server and bar configurations
 - Highlights version differences in red
 - Groups results by server
+- Supports both single file and directory comparisons:
+  - Single file: Groups results by servers
+  - Directory: Groups results by files and shows environment names
 - Publishes formatted results to Confluence
 - Supports SSL verification toggle for internal certificates
 - Auto-generates default configuration file
@@ -77,11 +80,15 @@ project: "your-project"
 pat: "your-azure-pat"
 file1:
 repository: "repo1-id"
-path: "path/to/first/file.yaml"
+path: "path/to/first/file.yaml"  # For single file comparison
+# OR
+path: "path/to/yaml/files/"      # For directory comparison
 branch: "main"
 file2:
 repository: "repo2-id"
-path: "path/to/second/file.yaml"
+path: "path/to/second/file.yaml"  # For single file comparison
+# OR
+path: "path/to/yaml/files/"       # For directory comparison
 branch: "main"
 confluence:
 base_url: "https://your-confluence-instance"
